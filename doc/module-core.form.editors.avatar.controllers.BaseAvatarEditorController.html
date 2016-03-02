@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Comindware UI-Core API Namespace: factory</title>
+	<title>Comindware UI-Core API Class: BaseAvatarEditorController</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -396,15 +396,18 @@
 					
 
 
-	<h1 class="page-title">Namespace: factory</h1>
+	<h1 class="page-title">Class: BaseAvatarEditorController</h1>
 <section>
 
 <header>
     <h2>
-        <span class="ancestors"><a href="module-core.html">core</a><a href="module-core.dropdown.html">.dropdown</a>.</span>
+        <span class="ancestors"><a href="module-core.html">core</a><a href="module-core.form.html">.form</a><a href="module-core.form.editors.html">.editors</a><a href="module-core.form.editors.avatar.html">.avatar</a><a href="module-core.form.editors.avatar.controllers.html">.controllers</a>.</span>
     
-    factory
+    BaseAvatarEditorController
     </h2>
+    
+        <div class="class-description"><p>Base data provider class for <a href="module-core.form.editors.AvatarEditorView.html">AvatarEditorView</a>.
+Methods <code>upload</code> and <code>getImage</code> must be implemented by subclasses.</p></div>
     
 </header>
 
@@ -414,76 +417,13 @@
 
     
         
-            <div class="description"><p>The factory covers common use cases of Popout/Dropdown views.
-You can create a simple menu (and other stuff like this) in one click without lots of manual work.</p></div>
-        
-
-        
-<dl class="details">
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-        
-    
-    </div>
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-        <h3 class="subsection-title">Methods</h3>
-
-        <dl>
-            
 <dt>
-    <h4 class="name" id="createDialogPopout"><span class="type-signature">&lt;static> </span>createDialogPopout<span class="signature">(options)</span><span class="type-signature"> &rarr; {PopoutView}</span></h4>
+    <h4 class="name" id="BaseAvatarEditorController"><span class="type-signature"></span>new BaseAvatarEditorController<span class="signature">(options)</span><span class="type-signature"></span></h4>
     
     
 </dt>
 <dd>
     
-    
-    <div class="description">
-        <p>Метод служит для создания <a href="module-core.dropdown.views.PopoutView.html">PopoutView</a> в режиме диалога.
-             Выпадающая панель занимает все пространство до низа экрана, а область вокруг затемняется.
-             Метод устанавливает опции <code>{ fade: true, height: 'bottom' }</code>.</p>
-    </div>
     
 
     
@@ -532,286 +472,7 @@ You can create a simple menu (and other stuff like this) in one click without lo
 
             
 
-            <td class="description last"><p>Объект опций <a href="module-core.dropdown.views.PopoutView.html">PopoutView</a></p></td>
-        </tr>
-
-	
-	</tbody>
-</table>
-
-    
-    
-    
-<dl class="details">
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-    
-    
-
-    
-
-    
-    
-    
-    
-    
-    <h5>Returns:</h5>
-    
-            
-<div class="param-desc">
-    <p>Экземпляр PopoutView</p>
-</div>
-
-
-
-<dl>
-	<dt>
-		Type
-	</dt>
-	<dd>
-		
-<span class="param-type">PopoutView</span>
-
-
-	</dd>
-</dl>
-
-
-        
-    
-    
-</dd>
-
-        
-            
-<dt>
-    <h4 class="name" id="createDropdown"><span class="type-signature">&lt;static> </span>createDropdown<span class="signature">(options)</span><span class="type-signature"> &rarr; {DropdownView}</span></h4>
-    
-    
-</dt>
-<dd>
-    
-    
-    <div class="description">
-        <p>Метод вызывает стандартный конструктор
-             <a href="module-core.dropdown.views.DropdownView.html">DropdownView</a> передавая ему опции 'as is'.</p>
-    </div>
-    
-
-    
-    
-    
-    
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-	<tr>
-		
-		<th>Name</th>
-		
-
-		<th>Type</th>
-
-		
-
-		
-
-		<th class="last">Description</th>
-	</tr>
-	</thead>
-
-	<tbody>
-	
-
-        <tr>
-            
-                <td class="name"><code>options</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="Object.html">Object</a></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Объект опций <a href="module-core.dropdown.views.DropdownView.html">DropdownView</a></p></td>
-        </tr>
-
-	
-	</tbody>
-</table>
-
-    
-    
-    
-<dl class="details">
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-    
-    
-
-    
-
-    
-    
-    
-    
-    
-    <h5>Returns:</h5>
-    
-            
-<div class="param-desc">
-    <p>Экземпляр DropdownView</p>
-</div>
-
-
-
-<dl>
-	<dt>
-		Type
-	</dt>
-	<dd>
-		
-<span class="param-type">DropdownView</span>
-
-
-	</dd>
-</dl>
-
-
-        
-    
-    
-</dd>
-
-        
-            
-<dt>
-    <h4 class="name" id="createMenu"><span class="type-signature">&lt;static> </span>createMenu<span class="signature">(options)</span><span class="type-signature"> &rarr; {Backbone.View}</span></h4>
-    
-    
-</dt>
-<dd>
-    
-    
-    <div class="description">
-        <p>Метод служит для быстрого создания меню на базе <a href="module-core.dropdown.views.PopoutView.html">PopoutView</a>.
-             В качестве <code>buttonView</code> и <code>panelView</code> (если они не заданы в опциях явно)
-             используются предустановленные View для меню. Остальные опции PopoutView передаются 'as is'.</p>
-    </div>
-    
-
-    
-    
-    
-    
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-	<tr>
-		
-		<th>Name</th>
-		
-
-		<th>Type</th>
-
-		
-
-		
-
-		<th class="last">Description</th>
-	</tr>
-	</thead>
-
-	<tbody>
-	
-
-        <tr>
-            
-                <td class="name"><code>options</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="Object.html">Object</a></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Объект опций <a href="module-core.dropdown.views.PopoutView.html">PopoutView</a>. Доступны дополнительные опции, приведенные ниже:</p>
+            <td class="description last"><p>Options object.</p>
                 <h6>Properties</h6>
                 
 
@@ -825,8 +486,6 @@ You can create a simple menu (and other stuff like this) in one click without lo
 		<th>Type</th>
 
 		
-		<th>Argument</th>
-		
 
 		
 
@@ -839,65 +498,23 @@ You can create a simple menu (and other stuff like this) in one click without lo
 
         <tr>
             
-                <td class="name"><code>items</code></td>
+                <td class="name"><code>defaultURL</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">Array</span>
+<span class="param-type">string</span>
 
 
             
             </td>
 
             
-                <td class="attributes">
-                
-
-                
-
-                
-                </td>
-            
 
             
 
-            <td class="description last"><p>Элементы списка меню. Могут быть переданы как простой массив объектов <code>{ id, name }</code>
-                             или как Backbone.Collection.</p></td>
-        </tr>
-
-	
-
-        <tr>
-            
-                <td class="name"><code>text</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">String</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last"><p>Текст кнопки меню. Если не задан, требуется вручную установить опцию <code>buttonView</code>.</p></td>
+            <td class="description last"><p>Default image URL to display when neither image value for <code>getImage</code> method nor full name for <a href="module-core.form.editors.AvatarEditorView.html">AvatarEditorView</a> provided.</p></td>
         </tr>
 
 	
@@ -954,173 +571,25 @@ You can create a simple menu (and other stuff like this) in one click without lo
     
     
     
-    <h5>Returns:</h5>
-    
-            
-<div class="param-desc">
-    <p>View Меню</p>
-</div>
-
-
-
-<dl>
-	<dt>
-		Type
-	</dt>
-	<dd>
-		
-<span class="param-type">Backbone.View</span>
-
-
-	</dd>
-</dl>
-
-
-        
     
     
 </dd>
 
-        
-            
-<dt>
-    <h4 class="name" id="createPopout"><span class="type-signature">&lt;static> </span>createPopout<span class="signature">(options)</span><span class="type-signature"> &rarr; {PopoutView}</span></h4>
     
-    
-</dt>
-<dd>
-    
-    
-    <div class="description">
-        <p>Метод вызывает стандартный конструктор
-             <a href="module-core.dropdown.views.PopoutView.html">PopoutView</a> передавая ему опции 'as is'.</p>
     </div>
-    
 
     
-    
-    
-    
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-	<tr>
-		
-		<th>Name</th>
-		
-
-		<th>Type</th>
-
-		
-
-		
-
-		<th class="last">Description</th>
-	</tr>
-	</thead>
-
-	<tbody>
-	
-
-        <tr>
-            
-                <td class="name"><code>options</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="Object.html">Object</a></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Объект опций <a href="module-core.dropdown.views.PopoutView.html">PopoutView</a></p></td>
-        </tr>
-
-	
-	</tbody>
-</table>
 
     
-    
-    
-<dl class="details">
-	
 
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-    
     
 
     
 
     
+
     
-    
-    
-    
-    <h5>Returns:</h5>
-    
-            
-<div class="param-desc">
-    <p>Экземпляр PopoutView</p>
-</div>
 
-
-
-<dl>
-	<dt>
-		Type
-	</dt>
-	<dd>
-		
-<span class="param-type">PopoutView</span>
-
-
-	</dd>
-</dl>
-
-
-        
-    
-    
-</dd>
-
-        </dl>
     
 
     

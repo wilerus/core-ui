@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Comindware UI-Core API Namespace: factory</title>
+	<title>Comindware UI-Core API Class: AvatarEditorView</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -396,15 +396,17 @@
 					
 
 
-	<h1 class="page-title">Namespace: factory</h1>
+	<h1 class="page-title">Class: AvatarEditorView</h1>
 <section>
 
 <header>
     <h2>
-        <span class="ancestors"><a href="module-core.html">core</a><a href="module-core.dropdown.html">.dropdown</a>.</span>
+        <span class="ancestors"><a href="module-core.html">core</a><a href="module-core.form.html">.form</a><a href="module-core.form.editors.html">.editors</a>.</span>
     
-    factory
+    AvatarEditorView
     </h2>
+    
+        <div class="class-description"><p>Editor used to set (or unset) an image to be used mainly as user avatar and process it any way (e.g. upload to server).</p></div>
     
 </header>
 
@@ -414,11 +416,166 @@
 
     
         
-            <div class="description"><p>The factory covers common use cases of Popout/Dropdown views.
-You can create a simple menu (and other stuff like this) in one click without lots of manual work.</p></div>
+<dt>
+    <h4 class="name" id="AvatarEditorView"><span class="type-signature"></span>new AvatarEditorView<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
         
 
-        
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>options.fullName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Full name used to fill editor with initials when no value is provided.</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>options.removable</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Flags whether an image may be removed (editor's value is set to <code>null</code>).</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>options.autoUpload</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Flags whether to upload (or process any other way) an image after it has been selected via file explorer.
+Instead, method <code>upload</code> can be called on editor to do it manually.</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>options.refreshPreviewAfterUpload</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Flags whether to refresh editor with value returned by <code>upload</code> method.
+This only makes sense when <code>upload</code> method returns value coresponding to image other than image used as argument to <code>upload</code> method.</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>options.controller</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">BaseAvatarEditorController</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Data provider controller in the form of subclass of
+<a href="module-core.form.editors.avatar.controllers.BaseAvatarEditorController.html">BaseAvatarEditorController</a>.</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
 <dl class="details">
 	
 
@@ -449,13 +606,29 @@ You can create a simple menu (and other stuff like this) in one click without lo
 	
 </dl>
 
+    
+    
 
-        
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
     
     </div>
 
     
+        <h3 class="subsection-title">Extends</h3>
 
+        <ul>
+            <li><a href="module-core.form.editors.base.BaseEditorView.html">module:core.form.editors.base.BaseEditorView</a></li>
+        </ul>
     
 
     
@@ -464,6 +637,72 @@ You can create a simple menu (and other stuff like this) in one click without lo
 
     
 
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        <dl>
+            
+<dt class="name" id="hasFocus">
+    <h4><span class="type-signature"></span>hasFocus<span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Indicates whether the editor has focus.</p>
+    </div>
+    
+
+    
+
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+	<dt class="inherited-from">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="module-core.form.editors.base.BaseEditorView.html#hasFocus">module:core.form.editors.base.BaseEditorView#hasFocus</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        </dl>
     
 
     
@@ -472,7 +711,7 @@ You can create a simple menu (and other stuff like this) in one click without lo
         <dl>
             
 <dt>
-    <h4 class="name" id="createDialogPopout"><span class="type-signature">&lt;static> </span>createDialogPopout<span class="signature">(options)</span><span class="type-signature"> &rarr; {PopoutView}</span></h4>
+    <h4 class="name" id="blur"><span class="type-signature"></span>blur<span class="signature">()</span><span class="type-signature"></span></h4>
     
     
 </dt>
@@ -480,9 +719,7 @@ You can create a simple menu (and other stuff like this) in one click without lo
     
     
     <div class="description">
-        <p>Метод служит для создания <a href="module-core.dropdown.views.PopoutView.html">PopoutView</a> в режиме диалога.
-             Выпадающая панель занимает все пространство до низа экрана, а область вокруг затемняется.
-             Метод устанавливает опции <code>{ fade: true, height: 'bottom' }</code>.</p>
+        <p>Clears the focus.</p>
     </div>
     
 
@@ -490,55 +727,6 @@ You can create a simple menu (and other stuff like this) in one click without lo
     
     
     
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-	<tr>
-		
-		<th>Name</th>
-		
-
-		<th>Type</th>
-
-		
-
-		
-
-		<th class="last">Description</th>
-	</tr>
-	</thead>
-
-	<tbody>
-	
-
-        <tr>
-            
-                <td class="name"><code>options</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="Object.html">Object</a></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Объект опций <a href="module-core.dropdown.views.PopoutView.html">PopoutView</a></p></td>
-        </tr>
-
-	
-	</tbody>
-</table>
-
     
     
     
@@ -550,61 +738,47 @@ You can create a simple menu (and other stuff like this) in one click without lo
 	
 
 	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-    
-    
-
-    
-
-    
-    
-    
-    
-    
-    <h5>Returns:</h5>
-    
-            
-<div class="param-desc">
-    <p>Экземпляр PopoutView</p>
-</div>
-
-
-
-<dl>
-	<dt>
-		Type
-	</dt>
-	<dd>
-		
-<span class="param-type">PopoutView</span>
-
-
+	<dt class="inherited-from">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="module-core.form.editors.base.BaseEditorView.html#blur">module:core.form.editors.base.BaseEditorView#blur</a>
+			</li>
+		</ul>
 	</dd>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
 </dl>
 
+    
+    
 
-        
+    
+
+    
+    
+    
+    
+    
     
     
 </dd>
@@ -612,7 +786,7 @@ You can create a simple menu (and other stuff like this) in one click without lo
         
             
 <dt>
-    <h4 class="name" id="createDropdown"><span class="type-signature">&lt;static> </span>createDropdown<span class="signature">(options)</span><span class="type-signature"> &rarr; {DropdownView}</span></h4>
+    <h4 class="name" id="commit"><span class="type-signature"></span>commit<span class="signature">(<span class="optional">options</span>)</span><span class="type-signature"> &rarr; {<a href="Object.html">Object</a>|undefined}</span></h4>
     
     
 </dt>
@@ -620,8 +794,7 @@ You can create a simple menu (and other stuff like this) in one click without lo
     
     
     <div class="description">
-        <p>Метод вызывает стандартный конструктор
-             <a href="module-core.dropdown.views.DropdownView.html">DropdownView</a> передавая ему опции 'as is'.</p>
+        <p>Update the model with the internal editor's value.</p>
     </div>
     
 
@@ -642,6 +815,8 @@ You can create a simple menu (and other stuff like this) in one click without lo
 
 		<th>Type</th>
 
+		
+		<th>Argument</th>
 		
 
 		
@@ -668,150 +843,20 @@ You can create a simple menu (and other stuff like this) in one click without lo
             </td>
 
             
-
-            
-
-            <td class="description last"><p>Объект опций <a href="module-core.dropdown.views.DropdownView.html">DropdownView</a></p></td>
-        </tr>
-
-	
-	</tbody>
-</table>
-
-    
-    
-    
-<dl class="details">
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-    
-    
-
-    
-
-    
-    
-    
-    
-    
-    <h5>Returns:</h5>
-    
-            
-<div class="param-desc">
-    <p>Экземпляр DropdownView</p>
-</div>
-
-
-
-<dl>
-	<dt>
-		Type
-	</dt>
-	<dd>
-		
-<span class="param-type">DropdownView</span>
-
-
-	</dd>
-</dl>
-
-
-        
-    
-    
-</dd>
-
-        
-            
-<dt>
-    <h4 class="name" id="createMenu"><span class="type-signature">&lt;static> </span>createMenu<span class="signature">(options)</span><span class="type-signature"> &rarr; {Backbone.View}</span></h4>
-    
-    
-</dt>
-<dd>
-    
-    
-    <div class="description">
-        <p>Метод служит для быстрого создания меню на базе <a href="module-core.dropdown.views.PopoutView.html">PopoutView</a>.
-             В качестве <code>buttonView</code> и <code>panelView</code> (если они не заданы в опциях явно)
-             используются предустановленные View для меню. Остальные опции PopoutView передаются 'as is'.</p>
-    </div>
-    
-
-    
-    
-    
-    
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-	<tr>
-		
-		<th>Name</th>
-		
-
-		<th>Type</th>
-
-		
-
-		
-
-		<th class="last">Description</th>
-	</tr>
-	</thead>
-
-	<tbody>
-	
-
-        <tr>
-            
-                <td class="name"><code>options</code></td>
-            
-
-            <td class="type">
-            
+                <td class="attributes">
                 
-<span class="param-type"><a href="Object.html">Object</a></span>
+                    &lt;optional><br>
+                
 
+                
+
+                
+                </td>
+            
 
             
-            </td>
 
-            
-
-            
-
-            <td class="description last"><p>Объект опций <a href="module-core.dropdown.views.PopoutView.html">PopoutView</a>. Доступны дополнительные опции, приведенные ниже:</p>
+            <td class="description last"><p>Options to pass to model.set().</p>
                 <h6>Properties</h6>
                 
 
@@ -839,45 +884,13 @@ You can create a simple menu (and other stuff like this) in one click without lo
 
         <tr>
             
-                <td class="name"><code>items</code></td>
+                <td class="name"><code>validate</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">Array</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last"><p>Элементы списка меню. Могут быть переданы как простой массив объектов <code>{ id, name }</code>
-                             или как Backbone.Collection.</p></td>
-        </tr>
-
-	
-
-        <tr>
-            
-                <td class="name"><code>text</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">String</span>
+<span class="param-type">Boolean</span>
 
 
             
@@ -897,7 +910,7 @@ You can create a simple menu (and other stuff like this) in one click without lo
 
             
 
-            <td class="description last"><p>Текст кнопки меню. Если не задан, требуется вручную установить опцию <code>buttonView</code>.</p></td>
+            <td class="description last"><p>Set to true to trigger built-in model validation.</p></td>
         </tr>
 
 	
@@ -921,6 +934,15 @@ You can create a simple menu (and other stuff like this) in one click without lo
 
 	
 
+	
+	<dt class="inherited-from">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="module-core.form.editors.base.BaseEditorView.html#commit">module:core.form.editors.base.BaseEditorView#commit</a>
+			</li>
+		</ul>
+	</dd>
 	
 
 	
@@ -958,7 +980,8 @@ You can create a simple menu (and other stuff like this) in one click without lo
     
             
 <div class="param-desc">
-    <p>View Меню</p>
+    <p>Returns an error object <code>{ type, message }</code> if validation fails
+and <code>options.forceCommit</code> is turned off. <code>undefined</code> otherwise.</p>
 </div>
 
 
@@ -969,7 +992,10 @@ You can create a simple menu (and other stuff like this) in one click without lo
 	</dt>
 	<dd>
 		
-<span class="param-type">Backbone.View</span>
+<span class="param-type"><a href="Object.html">Object</a></span>
+|
+
+<span class="param-type">undefined</span>
 
 
 	</dd>
@@ -984,7 +1010,7 @@ You can create a simple menu (and other stuff like this) in one click without lo
         
             
 <dt>
-    <h4 class="name" id="createPopout"><span class="type-signature">&lt;static> </span>createPopout<span class="signature">(options)</span><span class="type-signature"> &rarr; {PopoutView}</span></h4>
+    <h4 class="name" id="focus"><span class="type-signature"></span>focus<span class="signature">()</span><span class="type-signature"></span></h4>
     
     
 </dt>
@@ -992,8 +1018,459 @@ You can create a simple menu (and other stuff like this) in one click without lo
     
     
     <div class="description">
-        <p>Метод вызывает стандартный конструктор
-             <a href="module-core.dropdown.views.PopoutView.html">PopoutView</a> передавая ему опции 'as is'.</p>
+        <p>Sets the focus onto this editor.</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+	<dt class="inherited-from">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="module-core.form.editors.base.BaseEditorView.html#focus">module:core.form.editors.base.BaseEditorView#focus</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="getEnabled"><span class="type-signature"></span>getEnabled<span class="signature">()</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>Returns the value of <code>enabled</code> flag.</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+	<dt class="inherited-from">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="module-core.form.editors.base.BaseEditorView.html#getEnabled">module:core.form.editors.base.BaseEditorView#getEnabled</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">Boolean</span>
+
+
+	</dd>
+</dl>
+
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="getModelValue"><span class="type-signature"></span>getModelValue<span class="signature">()</span><span class="type-signature"> &rarr; {*}</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>Retrieves actual value of the bound attribute from the model.</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+	<dt class="inherited-from">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="module-core.form.editors.base.BaseEditorView.html#getModelValue">module:core.form.editors.base.BaseEditorView#getModelValue</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">*</span>
+
+
+	</dd>
+</dl>
+
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="getReadonly"><span class="type-signature"></span>getReadonly<span class="signature">()</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>Returns the value of <code>readonly</code> flag.</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+	<dt class="inherited-from">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="module-core.form.editors.base.BaseEditorView.html#getReadonly">module:core.form.editors.base.BaseEditorView#getReadonly</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">Boolean</span>
+
+
+	</dd>
+</dl>
+
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="getValue"><span class="type-signature"></span>getValue<span class="signature">()</span><span class="type-signature"> &rarr; {*}</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>Returns internal editor's value.</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+	<dt class="inherited-from">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="module-core.form.editors.base.BaseEditorView.html#getValue">module:core.form.editors.base.BaseEditorView#getValue</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">*</span>
+
+
+	</dd>
+</dl>
+
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="setEnabled"><span class="type-signature"></span>setEnabled<span class="signature">(enabled)</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>Sets a new value of <code>enabled</code> flag. While disabled, the editor's value cannot be changed or copied by the user.
+It's implied that the value doesn't make sense.</p>
     </div>
     
 
@@ -1027,13 +1504,13 @@ You can create a simple menu (and other stuff like this) in one click without lo
 
         <tr>
             
-                <td class="name"><code>options</code></td>
+                <td class="name"><code>enabled</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type"><a href="Object.html">Object</a></span>
+<span class="param-type">Boolean</span>
 
 
             
@@ -1043,7 +1520,7 @@ You can create a simple menu (and other stuff like this) in one click without lo
 
             
 
-            <td class="description last"><p>Объект опций <a href="module-core.dropdown.views.PopoutView.html">PopoutView</a></p></td>
+            <td class="description last"><p>New flag value.</p></td>
         </tr>
 
 	
@@ -1060,6 +1537,414 @@ You can create a simple menu (and other stuff like this) in one click without lo
 
 	
 
+	
+	<dt class="inherited-from">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="module-core.form.editors.base.BaseEditorView.html#setEnabled">module:core.form.editors.base.BaseEditorView#setEnabled</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="setReadonly"><span class="type-signature"></span>setReadonly<span class="signature">(readonly)</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>Sets a new value of <code>readonly</code> flag. While readonly, the editor's value cannot be changed but can be copied by the user.</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>readonly</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>New flag value.</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+	<dt class="inherited-from">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="module-core.form.editors.base.BaseEditorView.html#setReadonly">module:core.form.editors.base.BaseEditorView#setReadonly</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="setValue"><span class="type-signature"></span>setValue<span class="signature">(value)</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>Sets new internal editor's value.</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>value</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The new value.</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+	<dt class="inherited-from">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="module-core.form.editors.base.BaseEditorView.html#setValue">module:core.form.editors.base.BaseEditorView#setValue</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="updateValue"><span class="type-signature"></span>updateValue<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>Manually updated editor's internal value with the value from <code>this.model.get(this.key)</code>.
+Shouldn't be called normally. The method is called internally on model's <code>change</code> event.</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+	<dt class="inherited-from">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="module-core.form.editors.base.BaseEditorView.html#updateValue">module:core.form.editors.base.BaseEditorView#updateValue</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="validate"><span class="type-signature"></span>validate<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="Object.html">Object</a>|undefined}</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>Check validity with built-in validator functions (initially passed into constructor options).</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+	<dt class="inherited-from">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="module-core.form.editors.base.BaseEditorView.html#validate">module:core.form.editors.base.BaseEditorView#validate</a>
+			</li>
+		</ul>
+	</dd>
 	
 
 	
@@ -1097,7 +1982,7 @@ You can create a simple menu (and other stuff like this) in one click without lo
     
             
 <div class="param-desc">
-    <p>Экземпляр PopoutView</p>
+    <p>Returns an error object <code>{ type, message }</code> if validation fails. <code>undefined</code> otherwise.</p>
 </div>
 
 
@@ -1108,7 +1993,10 @@ You can create a simple menu (and other stuff like this) in one click without lo
 	</dt>
 	<dd>
 		
-<span class="param-type">PopoutView</span>
+<span class="param-type"><a href="Object.html">Object</a></span>
+|
+
+<span class="param-type">undefined</span>
 
 
 	</dd>
