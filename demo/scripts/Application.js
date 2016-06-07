@@ -1,6 +1,8 @@
 define([
 	'comindware/core',
-    'ajax/users'
+    'ajax/users',
+    'localizationMap',
+    'ajaxMap'
 ], function(core, usersStub) {
     'use strict';
 
@@ -9,6 +11,7 @@ define([
     Application.addRegions({
         fadingRegion: '.js-fading-region',
         popupRegion: '.js-popup-region',
+        headerRegion: '.js-header-region',
         contentRegion: '.js-content-region'
     });
 
@@ -18,14 +21,21 @@ define([
     };
 
     Application.addInitializer(function() {
-        core.services.WindowService.initialize({
-            fadingRegion: Application.fadingRegion,
-            popupRegion: Application.popupRegion,
-            ui: Application.ui
-        });
-
-        core.bootstrapper.initialize({
-            cacheService: usersStub
+        core.initialize({
+            cacheService: usersStub,
+            ajaxService: {
+                ajaxMap: window.ajaxMap
+            },
+            localizationService: {
+                langCode: window.langCode,
+                localizationMap: window['LANGMAP' + window.langCode.toUpperCase()],
+                warningAsError: window.compiled
+            },
+            windowService: {
+                fadingRegion: Application.fadingRegion,
+                popupRegion: Application.popupRegion,
+                ui: Application.ui
+            }
         });
     });
 

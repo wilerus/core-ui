@@ -29,7 +29,6 @@ define(['comindware/core', 'demoPage/views/CanvasView'],
                 behaviors: {
                     BackboneFormBehavior: {
                         behaviorClass: core.form.behaviors.BackboneFormBehavior,
-                        renderStrategy: 'render',
                         schema: function () {
                             return {
                                 text: {
@@ -64,10 +63,7 @@ define(['comindware/core', 'demoPage/views/CanvasView'],
 
             // 4. Show created view
             return new CanvasView({
-                view: new View(),
-                canvas: {
-                    height: '300px'
-                }
+                view: new View()
             });
         };
     });

@@ -11,17 +11,15 @@
 
 /* global define, require, Handlebars, Backbone, Marionette, $, _, Localizer */
 
-define(['text!../templates/groupsList.html', './GroupView'],
-    function (template, GroupView) {
+define([ './GroupItemView' ],
+    function (GroupItemView) {
         'use strict';
-        return Marionette.CompositeView.extend({
-            template: Handlebars.compile(template),
+        return Marionette.CollectionView.extend({
+            tagName: 'ul',
 
-            ui: {},
+            className: 'demo-groups__ul',
 
-            childView: GroupView,
-
-            childViewContainer: '.js-groups-list'
+            childView: GroupItemView
         });
     });
 

@@ -9,9 +9,10 @@ define([ 'comindware/core', 'demoPage/views/EditorCanvasView' ], function (core,
             editor: new core.form.editors.DurationEditor({
                 model: model,
                 key: 'durationValue',
-                autocommit: true
+                autocommit: true,
+                allowDays: false
             }),
-            presentation: '\'{{durationValue}}\''
+            presentation: "{{#isNull durationValue}}null{{else}}'{{durationValue}}'{{/isNull}}"
         });
     };
 });

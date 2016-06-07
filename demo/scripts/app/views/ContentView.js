@@ -11,13 +11,12 @@
 
 /* global define, require, Handlebars, Backbone, Marionette, $, _, Localizer, Prism */
 
-define(['text!../templates/caseModule.html', 'comindware/core', 'prism', 'require', 'markdown'],
+define(['text!../templates/content.html', 'comindware/core', 'prism', 'require', 'markdown'],
     function (template, core, prism, require) {
         'use strict';
 
         return Marionette.LayoutView.extend({
             initialize: function (options) {
-                this.loadCaseData();
             },
 
             modelEvents: {
@@ -44,7 +43,7 @@ define(['text!../templates/caseModule.html', 'comindware/core', 'prism', 'requir
                 Prism.highlightElement(this.ui.code[0]);
             },
 
-            loadCaseData: function() {
+            onShow: function() {
                 var path;
                 if (this.model.id) {
                     path = this.model.get('sectionId') +'/' + this.model.get('groupId') + '/' + this.model.id;

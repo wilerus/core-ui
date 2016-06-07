@@ -1,24 +1,31 @@
 ﻿'use strict';
 
 require.config({
-    baseUrl: 'scripts/',
-    waitSeconds: 60,
-    paths: {
-        // libraries
-        prism: 'lib/prism/prism',
-        markdown: 'lib/markdown-js/markdown',
+	baseUrl: '/scripts/',
+	waitSeconds: 60,
+	paths: {
+		// libraries
+		prism: 'lib/prism/prism',
+		markdown: 'lib/markdown-js/markdown',
+        domReady: 'lib/requirejs/domReady',
+        text: 'lib/requirejs/text',
 
-        // generated files
+		// generated files
         localizationMap: 'localization/localizationMap.en',
-        ajaxMap: 'ajax/ajaxMap',
+		ajaxMap: 'ajax/ajaxMap',
 
-        // demo page specific routing
-        demoPage: 'app/helpers',
-        text: 'comindware/core'
+		// demo page specific routing
+		demoPage: 'app/helpers',
+
+        // core paths
+        "comindware/core": 'dist/core.bundle'
+	},
+    shim: {
     }
 });
 
 window.langCode = 'en';
+window.compiled = false;
 
 require([
         'comindware/core',
@@ -27,12 +34,10 @@ require([
         'AppController'
     ],
     function(core, Application, AppRouter, AppController) {
-        'use strict';
-
-        Application.appRouter = new AppRouter({
-            controller: new AppController()
-        });
-
-        Application.start();
-        Backbone.history.start();
+    Application.appRouter = new AppRouter({
+        controller: new AppController()
     });
+
+    Application.start();
+    Backbone.history.start();
+});
