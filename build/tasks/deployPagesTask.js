@@ -9,10 +9,6 @@
  *       actual or intended publication of such source code.
  */
 
-/* eslint import/no-extraneous-dependencies: ["error", {"devDependencies": true}] */
-
-'use strict';
-
 const execSync = require('child_process').execSync;
 const fs = require('fs-extra');
 const mkdirp = require('mkdirp');

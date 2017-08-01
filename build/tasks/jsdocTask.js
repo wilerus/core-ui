@@ -9,44 +9,39 @@
  *       actual or intended publication of such source code.
  */
 
-/* eslint import/no-extraneous-dependencies: ["error", {"devDependencies": true}] */
-
-'use strict';
-
 const gulp = require('gulp');
 const babel = require('gulp-babel');
 
 const pathResolver = require('../pathResolver');
 
 module.exports = () => {
-    const jsdoc = require('gulp-jsdoc');
+    const jsdoc = require('gulp-jsdoc3');
     return gulp.src('./src/**/*.js')
         .pipe(babel({
-            presets: ['es2015'],
-            plugins: ['transform-es2015-modules-commonjs']
+            presets: ['latest']
         }))
-        .pipe(jsdoc.parser({}))
-        .pipe(jsdoc.generator('./doc', {
-            'path': `${__dirname}/node_modules/ink-docstrap/template`,
-            'includeDate': false,
-            'systemName': 'Comindware UI-Core API',
-            'footer': '',
-            'copyright': 'Comindware Copyright © 2016',
-            'navType': 'vertical',
-            'theme': 'cerulean',
-            'linenums': true,
-            'collapseSymbols': false,
-            'inverseNav': true,
-            'highlightTutorialCode': true,
-            'plugins': ['plugins/markdown'],
-            'markdown': {
-                'parser': 'gfm',
-                'hardwrap': true
+        //.pipe(jsdoc.parser({}))
+        .pipe(jsdoc('./doc', {
+            path: `${__dirname}/node_modules/ink-docstrap/template`,
+            includeDate: false,
+            systemName: 'Comindware UI-Core API',
+            footer: '',
+            copyright: 'Comindware Copyright © 2016',
+            navType: 'vertical',
+            theme: 'cerulean',
+            linenums: true,
+            collapseSymbols: false,
+            inverseNav: true,
+            highlightTutorialCode: true,
+            plugins: ['plugins/markdown'],
+            markdown: {
+                parser: 'gfm',
+                hardwrap: true
             }
         }, {
-            'outputSourceFiles': true,
-            'outputSourcePath': true,
-            'cleverLinks': false,
-            'monospaceLinks': false
+            outputSourceFiles: true,
+            outputSourcePath: true,
+            cleverLinks: false,
+            monospaceLinks: false
         }));
 };

@@ -13,11 +13,12 @@
 
 define([
     'comindware/core'
-], function () {
+], () => {
     'use strict';
+
     return Marionette.ItemView.extend({
         modelEvents: {
-            'change': 'render'
+            change: 'render'
         },
         template: false
     });

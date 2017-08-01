@@ -1,6 +1,6 @@
 define([
     'comindware/core'
-], function() {
+], () => {
     'use strict';
 
     return Marionette.AppRouter.extend({

@@ -6,17 +6,9 @@
  * Published under the MIT license
  */
 
-/* global module, __dirname */
-
-'use strict';
-
-/* eslint import/no-extraneous-dependencies: ["error", {"devDependencies": true}] */
-
 const webpack = require('webpack');
-const path = require('path');
 const autoprefixer = require('autoprefixer');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const _ = require('lodash');
 const pathResolver = require('./pathResolver');
 
 const jsFileName = 'core.js';
@@ -25,7 +17,7 @@ const cssFileName = 'core.css';
 const cssFileNameMin = 'core.min.css';
 
 module.exports = {
-    build: function (options) {
+    build(options) {
         const DEVELOPMENT = options.env === 'development';
         const PRODUCTION = options.env === 'production';
         const TEST_COVERAGE = options.env === 'test-coverage';
@@ -35,21 +27,19 @@ module.exports = {
         const FONT_LIMIT = PRODUCTION ? 10000 : 1000000;
         const GRAPHICS_LIMIT = PRODUCTION ? 10000 : 1000000;
 
-        let webpackConfig = {
+        const webpackConfig = {
             cache: true,
             devtool: TEST ? 'inline-source-map' : 'source-map',
             debug: true,
             module: {
-                loaders: [
+                rules: [
                     {
                         test: /\.jsx?$/,
                         exclude: /(node_modules|bower_components|src\/external\/)/,
                         loader: 'babel-loader',
                         query: {
-                            presets: ['es2015'],
-                            cacheDirectory: true,
-                            plugins: [
-                            ]
+                            presets: ['latest'],
+                            cacheDirectory: true
                         }
                     },
                     {
@@ -165,9 +155,9 @@ module.exports = {
                     pathResolver.source()
                 ],
                 alias: {
-                    'rangyinputs': pathResolver.source('external/rangyinputs/rangyinputs-jquery-src'),
-                    'keypress': pathResolver.source('external/Keypress/keypress-2.1.0.min'),
-                    'handlebars': 'handlebars/dist/handlebars'
+                    rangyinputs: pathResolver.source('external/rangyinputs/rangyinputs-jquery-src'),
+                    keypress: pathResolver.source('external/Keypress/keypress-2.1.0.min'),
+                    handlebars: 'handlebars/dist/handlebars'
                 }
             },
             devServer: {

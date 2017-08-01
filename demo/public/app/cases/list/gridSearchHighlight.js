@@ -1,11 +1,10 @@
 define([
-    'comindware/core', 'demoPage/views/ListSearchCanvasView'], function (core, ListSearchCanvasView) {
+    'comindware/core', 'demoPage/views/ListSearchCanvasView'], (core, ListSearchCanvasView) => {
     'use strict';
 
-    return function () {
-
+    return function() {
         // 1. Get some data
-        var dataArray = [
+        const dataArray = [
             {
                 firstName: 'Airi',
                 secondName: 'Satou',
@@ -39,11 +38,11 @@ define([
         ];
 
         // 2. Create columns
-        var columns = [
+        const columns = [
             {
                 id: 'firstName',
                 cellView: core.list.cellFactory.getTextCellView(),
-                viewModel: new Backbone.Model({displayText: 'First Name'}),
+                viewModel: new Backbone.Model({ displayText: 'First Name' }),
                 sortAsc: core.utils.helpers.comparatorFor(core.utils.comparators.stringComparator2Asc, 'textCell'),
                 sortDesc: core.utils.helpers.comparatorFor(core.utils.comparators.stringComparator2Desc, 'textCell'),
                 sorting: 'asc'
@@ -51,7 +50,7 @@ define([
             {
                 id: 'secondName',
                 cellView: core.list.cellFactory.getTextCellView(),
-                viewModel: new Backbone.Model({displayText: 'Second Name'}),
+                viewModel: new Backbone.Model({ displayText: 'Second Name' }),
                 sortAsc: core.utils.helpers.comparatorFor(core.utils.comparators.stringComparator2Asc, 'textCell'),
                 sortDesc: core.utils.helpers.comparatorFor(core.utils.comparators.stringComparator2Desc, 'textCell'),
                 sorting: 'asc'
@@ -59,7 +58,7 @@ define([
             {
                 id: 'city',
                 cellView: core.list.cellFactory.getTextCellView(),
-                viewModel: new Backbone.Model({displayText: 'City'}),
+                viewModel: new Backbone.Model({ displayText: 'City' }),
                 sortAsc: core.utils.helpers.comparatorFor(core.utils.comparators.stringComparator2Asc, 'textCell'),
                 sortDesc: core.utils.helpers.comparatorFor(core.utils.comparators.stringComparator2Desc, 'textCell'),
                 sorting: 'asc'
@@ -67,7 +66,7 @@ define([
             {
                 id: 'age',
                 cellView: core.list.cellFactory.getTextCellView(),
-                viewModel: new Backbone.Model({displayText: 'Age'}),
+                viewModel: new Backbone.Model({ displayText: 'Age' }),
                 sortAsc: core.utils.helpers.comparatorFor(core.utils.comparators.stringComparator2Asc, 'textCell'),
                 sortDesc: core.utils.helpers.comparatorFor(core.utils.comparators.stringComparator2Desc, 'textCell'),
                 sorting: 'asc'
@@ -75,46 +74,44 @@ define([
         ];
 
         // 3. Create Backbone.Model that implement ListItemBehavior
-        var GridItemModel = Backbone.Model.extend({
-            initialize: function () {
+        const GridItemModel = Backbone.Model.extend({
+            initialize() {
                 core.utils.helpers.applyBehavior(this, core.list.models.behaviors.ListItemBehavior);
             }
         });
 
         // 4. Create VirtualCollection that use this model (and do other stuff maybe)
         //    apply HighlightableBehavior on it
-        var GridItemCollection = core.collections.VirtualCollection.extend({
-            initialize: function () {
+        const GridItemCollection = core.collections.VirtualCollection.extend({
+            initialize() {
                 core.utils.helpers.applyBehavior(this, core.collections.behaviors.HighlightableBehavior);
             },
             model: GridItemModel
         });
 
-        var collection = new GridItemCollection(/*dataArray*/);
+        const collection = new GridItemCollection(/*dataArray*/);
         collection.reset(dataArray);
 
         // 5. Create grid
-        var bundle = core.list.factory.createDefaultGrid({
+        const bundle = core.list.factory.createDefaultGrid({
             gridViewOptions: {
-                columns: columns,
+                columns,
                 childHeight: 40,
                 useDefaultRowView: true
             },
-            collection: collection
+            collection
         });
 
         // 6. Create searchbar view (or whatever you want to change filter function) and implement search
-        var searchBarView = new core.views.SearchBarView();
-        searchBarView.on('search', function (text) {
+        const searchBarView = new core.views.SearchBarView();
+        searchBarView.on('search', (text) => {
             if (!text) {
                 collection.filter(null);
                 collection.unhighlight();
             } else {
                 text = text.toLowerCase();
                 collection.unhighlight();
-                collection.filter(function (model) {
-                    return _.find(model.attributes, function (it) { return it.toLowerCase().indexOf(text) !== -1; });
-                });
+                collection.filter((model) => _.find(model.attributes, (it) => it.toLowerCase().indexOf(text) !== -1));
                 collection.highlight(text);
             }
         });
@@ -125,5 +122,5 @@ define([
             content: bundle.gridView,
             scrollbar: bundle.scrollbarView
         });
-    }
+    };
 });
