@@ -1,6 +1,5 @@
 
 import template from '../templates/popup.html';
-
 import ExpressionView from '../views/ExpressionView';
 import ScriptView from '../views/ScriptView';
 

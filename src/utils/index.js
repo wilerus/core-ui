@@ -7,10 +7,8 @@ import cookieHelpers_ from './cookieHelpers';
 import keyCode_ from './keyCode';
 import './handlebars/all';
 import './jquery/selector.focusable';
-import RegionBehavior_ from './marionette/RegionBehavior';
 import './codemirror';
 
-export const RegionBehavior = RegionBehavior_;
 export const comparators = comparators_;
 export const helpers = helpers_;
 export const htmlHelpers = htmlHelpers_;
@@ -51,7 +49,5 @@ export default /** @lends module:core.utils */ {
      * Enumeration of key codes used in keyboard events.
      * @namespace
      * */
-    keyCode,
-
-    RegionBehavior
+    keyCode
 };

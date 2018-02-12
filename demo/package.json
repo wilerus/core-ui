@@ -7,7 +7,7 @@
     "start": "webpack-dev-server --open"
   },
   "devDependencies": {
-    "autoprefixer": "^7.2.6",
+    "autoprefixer": "^8.0.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-plugin-transform-runtime": "^6.23.0",
@@ -19,10 +19,10 @@
     "copy-webpack-plugin": "^4.4.1",
     "css-loader": "^0.28.9",
     "cssnano": "^3.10.0",
-    "exports-loader": "^0.6.4",
+    "exports-loader": "^0.7.0",
     "expose-loader": "^0.7.4",
     "extract-text-webpack-plugin": "^3.0.2",
-    "file-loader": "^0.11.2",
+    "file-loader": "^1.1.6",
     "handlebars": "^4.0.11",
     "handlebars-loader": "^1.6.0",
     "html-webpack-plugin": "^2.29.0",
@@ -30,9 +30,9 @@
     "postcss-loader": "^2.1.0",
     "raw-loader": "^0.5.1",
     "source-map-loader": "^0.2.3",
-    "style-loader": "^0.18.2",
+    "style-loader": "^0.20.1",
     "text-loader": "0.0.1",
-    "url-loader": "^0.5.9",
+    "url-loader": "^0.6.2",
     "webpack": "^3.11.0",
     "webpack-dev-server": "^2.11.1",
     "webpack-pwa-manifest": "^3.4.1"

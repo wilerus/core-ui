@@ -1,6 +1,5 @@
 
-import 'lib';
-import { helpers, RegionBehavior } from 'utils';
+import { helpers } from 'utils';
 import form from 'form';
 import LayoutBehavior from '../behaviors/LayoutBehavior';
 import FormContentFactory from './FormContentFactory';
@@ -28,26 +27,22 @@ export default Marionette.View.extend({
         this.model.set({ uniqueFormId: this.uniqueFormId });
     },
 
-    template: false,
+    template: Handlebars.compile('<div class="form-class"></div>'),
 
     tagName: 'form',
 
     className: classes.CLASS_NAME,
 
-    regions() {
-        return {
-            contentRegion: {
-                el: this.el
-            }
-        };
+    regions: {
+        contentRegion: {
+            el: '.form-class',
+            replaceElement: true
+        }
     },
 
     behaviors: {
         LayoutBehavior: {
             behaviorClass: LayoutBehavior
-        },
-        RegionBehavior: {
-            behaviorClass: RegionBehavior
         },
         BackboneFormBehavior: {
             behaviorClass: form.behaviors.BackboneFormBehavior,

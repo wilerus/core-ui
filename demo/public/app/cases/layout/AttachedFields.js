@@ -29,9 +29,6 @@ export default function() {
         },
 
         behaviors: {
-            RegionBehavior: {
-                behaviorClass: core.utils.RegionBehavior
-            },
             BackboneFormBehavior: {
                 behaviorClass: core.form.behaviors.BackboneFormBehavior,
                 renderStrategy: 'manual',
