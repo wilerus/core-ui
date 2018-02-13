@@ -242,7 +242,8 @@ module.exports = options => {
         },
         devServer: {
             noInfo: true,
-            stats: 'minimal'
+            stats: 'minimal',
+            port: 3001
         }
     };
 

@@ -21,7 +21,10 @@ const rootView = Marionette.View.extend({
 });
 
 export default Marionette.Application.extend({
-    region: '.js-app-region',
+    region: {
+        el: '.js-app-region',
+        replaceElement: true
+    },
 
     onStart() {
         const isProduction = process.env.NODE_ENV === 'production'; // jshint ignore:line
