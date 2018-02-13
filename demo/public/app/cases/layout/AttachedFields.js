@@ -1,10 +1,3 @@
-/**
- * Developer: Stepan Burguchev
- * Date: 2/27/2017
- * Copyright: 2009-2017 Stepan Burguchev®
- *       All Rights Reserved
- * Published under the MIT license
- */
 
 import core from 'comindware/core';
 
@@ -18,14 +11,13 @@ export default function() {
     });
 
     const View = Marionette.View.extend({
-        template: false,
+        template: Handlebars.compile('<div class="attached-class"></div>'),
 
-        regions() {
-            return {
-                contentRegion: {
-                    el: this.el
-                }
-            };
+        regions: {
+            contentRegion: {
+                el: '.attached-class',
+                replaceElement: true
+            }
         },
 
         behaviors: {
@@ -60,7 +52,7 @@ export default function() {
         },
 
         onRender() {
-            this.contentRegion.show(new core.layout.VerticalLayout({
+            this.showChildView('contentRegion', new core.layout.VerticalLayout({
                 rows: [
                     core.layout.createFieldAnchor('title'),
                     new core.layout.HorizontalLayout({
